@@ -1,0 +1,27 @@
+[
+    {
+      "comment_text": "there here is some comment text",
+      "user_id": 1,
+      "post_id": 1
+    },
+    {
+      "comment_text": "Qui mollit aliquip labore aliqua adipisicing fugiat pariatur veniam commodo.",
+      "user_id": 1,
+      "post_id": 1
+    },
+    {
+      "comment_text": "Amet consequat nisi do incididunt dolor occaecat.",
+      "user_id": 1,
+      "post_id": 1
+    },
+    {
+      "comment_text": "Amet consequat nisi do incididunt dolor occaecat.",
+      "user_id": 2,
+      "post_id": 1
+    },
+    {
+      "comment_text": "Amet consequat nisi do incididunt dolor occaecat.",
+      "user_id": 2,
+      "post_id": 1
+    }
+  ]
