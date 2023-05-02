@@ -73,3 +73,24 @@ router.get('/', async (req, res) => {
     }
   });
   
+  router.delete('/:id', withAuth, async (req, res) => {
+    try {
+      const commentData = await Comment.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      if (!commentData) {
+        res.status(404).json({
+          message: `No post owned by user_id = ${req.session.user_id} found with id = ${req.params.id}`,
+        });
+        return;
+      }
+  
+      res.status(200).json(commentData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+  
