@@ -28,4 +28,34 @@ router.get('/', async (req, res) => {
     }
   });
 
-  
+  router.get('/:id', async (req, res) => {
+    try {
+      const postData = await Post.findOne({
+        where: { id: req.params.id },
+        attributes: ['id', 'title', 'content', 'created_at'],
+        order: [['created_at', 'DESC']],
+        include: [
+          { model: User, attributes: ['username'] },
+          {
+            model: Comment,
+            attributes: [
+              'id',
+              'comment_text',
+              'post_id',
+              'user_id',
+              'created_at',
+            ],
+            include: { model: User, attributes: ['username'] },
+          },
+        ],
+      });
+      if (!postData) {
+        res.status(404).json({ message: `no posts with id = ${req.params.id}` });
+        return;
+      }
+      res.status(200).json(postData);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+
