@@ -47,4 +47,20 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.post('/', async (req, res) => {
+    try {
+      const userData = await User.create(req.body);
+      console.table(req.body);
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.logged_in = true;
+        res
+          .status(201)
+          .json({ message: `Successfully created ${userData.username}` });
+      });
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
   
