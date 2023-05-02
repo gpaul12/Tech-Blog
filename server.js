@@ -21,4 +21,7 @@ const sess = {
       db: sequelize,
     }),
   };
+
+  app.use(session(sess));
+
   
