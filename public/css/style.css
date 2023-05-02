@@ -96,3 +96,102 @@
     text-decoration: none;
     font-size: 1.2rem;
   }
+  
+  .btn-back:hover {
+    color: var(--primary);
+    background-color: var(--tertiary);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px var(--dark);
+  }
+  
+  .hero {
+    padding: 3% 4%;
+    background-color: var(--dark);
+    color: var(--primary);
+  }
+  
+  .hero p {
+    max-width: 75%;
+  }
+  
+  .app-title {
+    font-size: 3rem;
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 0 10px;
+    display: inline-block;
+    border-radius: var(--border-radius);
+    box-shadow: 6px 5px var(--light-dark);
+  }
+  
+  .list-group {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .list-item {
+    margin-bottom: 10px;
+    padding: 1.5%;
+    border-radius: var(--border-radius);
+    background-color: var(--light-dark);
+    color: var(--primary);
+    text-decoration: none;
+  }
+  
+  .list-item:hover {
+    background-color: var(--dark);
+  }
+  
+  .status-icon {
+    padding: 2px 5px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: var(--border-radius);
+  }
+  
+  .icon-danger {
+    color: rgb(255, 70, 70);
+  }
+  
+  .icon-success {
+    color: rgb(29, 153, 255);
+  }
+  /* CARDS */
+  
+  .card {
+    margin: 0 0 20px 0;
+    border: 2px solid var(--dark);
+    border-radius: var(--border-radius);
+  }
+  
+  .card-header {
+    color: var(--primary);
+    background-color: var(--dark);
+    padding: 1%;
+    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  }
+  
+  .card-body {
+    padding: 1%;
+  }
+  
+  h4 {
+    font-weight: 700;
+    margin: 0;
+    color: var(--light-dark);
+    line-height: 1.25;
+  }
+  
+  .link {
+    color: var(--light-dark);
+  }
+  
+  .login-link {
+    color: var(--dark);
+  }
+  
+  .nav {
+    padding: 10px;
+    line-height: 1.25;
+    float: top;
+  }
