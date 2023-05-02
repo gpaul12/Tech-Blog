@@ -20,4 +20,18 @@ router.get('/', (req, res) => {
         },
       ],
     })
-    
+    .then((dbPostData) => {
+        const posts = dbPostData.map((post) => post.get({ plain: true }));
+        res.render('homepage', {
+          posts,
+          logged_in: req.session.logged_in,
+          username: req.session.username,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+  
