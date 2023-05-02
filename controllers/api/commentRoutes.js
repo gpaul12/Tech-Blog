@@ -49,3 +49,27 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.put('/:id', withAuth, async (req, res) => {
+    try {
+      const updatedComment = await Comment.update(
+        {
+          comment_text: req.body.comment_text,
+        },
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
+      if (!updatedComment) {
+        res
+          .status(404)
+          .json({ message: `No comment found with id = ${req.params.id}` });
+        return;
+      }
+      res.status(200).json(updatedComment);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+  
