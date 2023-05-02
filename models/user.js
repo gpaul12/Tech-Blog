@@ -28,4 +28,12 @@ class User extends Model {
           isEmail: true,
         },
       },
-      
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [4],
+        },
+      },
+    },
+    
