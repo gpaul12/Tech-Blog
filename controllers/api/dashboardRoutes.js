@@ -83,4 +83,4 @@ router.get('/', withAuth, (req, res) => {
     res.render('new-post', { username: req.session.username });
   });
 
-  
+  module.exports = router;
