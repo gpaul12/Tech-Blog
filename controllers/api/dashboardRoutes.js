@@ -59,4 +59,23 @@ router.get('/', withAuth, (req, res) => {
         },
       ],
     })
-    
+    .then((dbPostData) => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+  
+        const post = dbPostData.get({ plain: true });
+        console.log('sending ' + req.session.username);
+        res.render('edit-post', {
+          post,
+          logged_in: true,
+          username: req.session.username,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+  
