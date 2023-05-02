@@ -94,3 +94,18 @@ router.get('/', async (req, res) => {
       res.status(400).json(err);
     }
   });
+
+  router.post('/logout', async (req, res) => {
+    try {
+      if (req.session.logged_in) {
+        const userData = await req.session.destroy(() => {
+          res.status(204).end();
+        });
+      } else {
+        res.status(404).end();
+      }
+    } catch {
+      res.status(400).end();
+    }
+  });
+  
