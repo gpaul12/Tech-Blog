@@ -78,4 +78,9 @@ router.get('/', withAuth, (req, res) => {
         res.status(500).json(err);
       });
   });
+
+  router.get('/new', (req, res) => {
+    res.render('new-post', { username: req.session.username });
+  });
+
   
