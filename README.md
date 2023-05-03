@@ -17,7 +17,7 @@ This is a MySQL and Content Management System blog, built using the MVC(Model Vi
 
 ## **Usage**
 
-To use the blog website, simply navigate to the [server it is hosted on](https://TBD.herokuapp.com/). Once there, you will be able to see all of the blog posts that other users have posted. If you would like to comment on other users' posts, or create posts of your own, you'll need to register for an account. Once you have registered for an account, you will be logged in automatically. You can then click 'Create Post' or go to your _dashboard_ to create a new post.
+To use the blog website, simply navigate to the [server it is hosted on](https://gpaul-tech-blogs.herokuapp.com/). Once there, you will be able to see all of the blog posts that other users have posted. If you would like to comment on other users' posts, or create posts of your own, you'll need to register for an account. Once you have registered for an account, you will be logged in automatically. You can then click 'Create Post' or go to your _dashboard_ to create a new post.
 
 ## **Built With**
 
